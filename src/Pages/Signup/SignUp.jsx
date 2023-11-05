@@ -1,14 +1,24 @@
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
+import { useContext } from "react";
+import { authContext } from "../../Provider/AuthProvider/AuthProvider";
+import { Result } from "postcss";
 
 const SignUp = () => {
+    const {signUp} = useContext(authContext);
     const handelRegister = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, email, password);
+        signUp(email, password)
+        .then(result =>{
+            console.log(result.user);
+        })
+        .then(error =>{
+            console.error(error);
+        })
     }
     return (
         <div className="mb-20">
