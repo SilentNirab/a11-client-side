@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
-import { Result } from "postcss";
 
 const SignUp = () => {
     const {signUp} = useContext(authContext);
