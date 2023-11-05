@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
+import { updateProfile } from "firebase/auth";
 
 const SignUp = () => {
     const {signUp} = useContext(authContext);
@@ -13,9 +14,17 @@ const SignUp = () => {
         const password = form.get('password');
         signUp(email, password)
         .then(result =>{
-            console.log(result.user);
+            updateProfile(result.user, {
+                displayName : name , 
+            })
+            .then(() =>{
+                console.log(result);
+            })
+            .then(error => {
+                console.error(error);
+            })
         })
-        .then(error =>{
+        .catch(error =>{
             console.error(error);
         })
     }
