@@ -6,11 +6,13 @@ import SignUp from "../Pages/Signup/SignUp";
 import Room from "../Pages/Room/Room";
 import MyRoom from "../Pages/MyRoom/MyRoom";
 import PrivetRoute from "../Providers/PrivetRoute";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Root></Root>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
