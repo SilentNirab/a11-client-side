@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
-import Navbar from "../../Components/Navbar/Navbar";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
 
 const Login = () => {
-    const {signIn} = useContext(authContext);
+    const location = useLocation();
+    const navigate = useNavigate()
+    const {signIn, googleSignIn} = useContext(authContext);
     const handelLogin = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
@@ -14,15 +15,26 @@ const Login = () => {
         signIn(eamil, password)
         .then(result =>{
             console.log(result);
+            navigate(location?.state ? location.state : '/');
+            
         })
         .catch(error =>{
             console.error(error);
         })
 
     }
+    const handelGoogleSingnIn = () =>{
+        googleSignIn()
+        .then(result => {
+            console.log(result.user);
+            navigate(location?.state ? location.state : '/');
+        })
+        .catch(error => {
+            console.error(error);
+        })
+    }
     return (
         <div className="mb-20">
-            <Navbar></Navbar>
             <div className="max-w-md mx-auto">
                 <div className="">
                     <h3 className="text-4xl text-black font-bold text-center py-5">Login</h3>
@@ -48,7 +60,7 @@ const Login = () => {
                     <div className="text-center form-control">
                         <hr />
                         <p>or</p>
-                        <button className="text-[#a28441] font-bold border-[#a28441] border-2 py-2 rounded-md flex justify-center items-center px-5"> <span className="mr-2">Google</span>
+                        <button onClick={handelGoogleSingnIn} className="text-[#a28441] font-bold border-[#a28441] border-2 py-2 rounded-md flex justify-center items-center px-5"> <span className="mr-2">Google</span>
                             <svg viewBox="0 0 48 48" className="w-5 mr-2">
                                 <title>Google Logo</title>
                                 <clipPath id="g">

@@ -1,0 +1,35 @@
+[
+    {
+      "category_name": "Luxury Room",
+      "image": "https://i.ibb.co/VTVJdZ1/our-1.jpg",
+      "price": 320
+    },
+    {
+      "category_name": "Double Room",
+      "image": "https://i.ibb.co/pjKTBY2/our-2.jpg",
+      "price": 280
+    },
+    {
+      "category_name": "Family Room",
+      "image": "https://i.ibb.co/f09TcQW/our-3.jpg",
+      "price": 300
+    },
+    {
+      "category_name": "Delux Room",
+      "image": "https://i.ibb.co/DfF00Gw/our-4.jpg",
+      "price": 250
+    },
+    {
+      "category_name": "Single Room",
+      "image": "https://i.ibb.co/ByjBw9G/our-5.jpg",
+      "price": 180
+    },
+    {
+        "category_name": "Presidential Room",
+        "image": "https://i.ibb.co/2gn3V82/our-6.jpg",
+        "price": 280
+      }
+  ]
+  
+
+
