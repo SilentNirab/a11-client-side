@@ -8,6 +8,7 @@ const Offer = () => {
                             <h1 className="mb-5 text-4xl text-white font-bold mt-5">STANDARDIZED BUDGET ROOMS</h1>
                             <hr />
                             <p className="mb-5 text-6xl text-white font-bold">$99/-</p>
+                            <button className="bg-[#f4364fe7] hover:bg-[#2a64d8] border-2 px-5 py-2 text-white font-bold border-white rounded-md">Book Now</button>
                         </div>
                         <div className="">
                             <div className="bg-[#f4364fe7] hover:bg-[#2a64d8] w-72 h-72 text-center border-4 border-white rounded-full">
