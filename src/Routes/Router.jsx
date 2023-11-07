@@ -7,6 +7,7 @@ import Room from "../Pages/Room/Room";
 import MyRoom from "../Pages/MyRoom/MyRoom";
 import PrivetRoute from "../Providers/PrivetRoute";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import DetailsPage from "../Pages/Room/DetailsPage";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
             {
                 path: '/signup',
                 element: <SignUp></SignUp>
+            },
+            {
+                path: '/details/:id',
+                element: <DetailsPage></DetailsPage>
             }
         ]
     }
