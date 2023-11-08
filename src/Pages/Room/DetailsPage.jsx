@@ -2,6 +2,8 @@ import { Link, useLoaderData } from "react-router-dom";
 import roomBanner from '../../assets/Images/rooms-banner.jpg'
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 const DetailsPage = () => {
     const roomDetails = useLoaderData();
     const { category_name, thumbnail_img, room_description } = roomDetails;
@@ -19,7 +21,21 @@ const DetailsPage = () => {
         thumbnail_img, email}
 
         console.log(booking);
-        
+        fetch('http://localhost:5000/bookings', {
+            method: 'POST', 
+            headers: {
+                'content-type': 'application/json'
+            }, 
+            body: JSON.stringify(booking)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+            if(data.insertedId){
+                toast.success('Room book successfully')
+            }
+        })
+
     }
     return (
         <div className="">
@@ -84,6 +100,7 @@ const DetailsPage = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
 
     )
