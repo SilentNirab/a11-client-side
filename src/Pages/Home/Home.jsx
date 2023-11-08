@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Newsletter from "./Newsletter";
 import Offer from "./Offer";
 import Testimonial from "./Testimonial/Testimonial";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [rooms, setRooms] = useState([]);
@@ -37,7 +38,10 @@ const Home = () => {
                                     <h2 className="card-title ">{room.category_name}</h2>
                                     <p className="text-left text-[#a28441]">${room.price_per_night} / Per Night</p>
                                     <div className="card-actions justify-end">
-                                        <button className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Buy Now</button>
+
+                                        <Link to={`rooms/details/${room._id}`}>
+                                            <button className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Book Now</button>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>)
