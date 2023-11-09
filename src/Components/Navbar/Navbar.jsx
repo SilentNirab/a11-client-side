@@ -2,13 +2,16 @@ import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/Images/logo.png"
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 const Navbar = () => {
-    const {user, logOut} = useContext(authContext);
+    const { user, logOut } = useContext(authContext);
 
-    const handelLogOut = () =>{
+    const handelLogOut = () => {
         logOut()
-        .then()
-        .catch()
+            .then(
+                toast.success('Logout successfully')
+            )
+            .catch()
     }
     const Navlinks = <>
         <li className="font-bold text-lg">
@@ -45,7 +48,7 @@ const Navbar = () => {
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-6 h-6 stroke-current"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                             </label>
                         </div>
-                        <div className="flex-1 px-2 mx-2">
+                        <div className="flex-1 px-2 ml-2">
                             <img src={logo} alt="logo" />
                         </div>
                         <div className="flex-none hidden lg:block">
@@ -55,21 +58,24 @@ const Navbar = () => {
                         </div>
                         {
                             user ?
-                            <div className="dropdown dropdown-end">
-                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                                    <div className="w-10 rounded-full border-black border-2">
-                                        <img src={user.photoURL} />
+                                <div className="flex items-center mx-4">
+                                    <Link onClick={handelLogOut} className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Logout</Link>
+                                    <div className="dropdown dropdown-end ">
+                                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                            <div className="w-10 rounded-full border-black border-2">
+                                                <img src={user.photoURL} />
+                                            </div>
+                                        </label>
+                                        <ul tabIndex={0} className="mt-3 z-[1] p-3 shadow  menu-sm dropdown-content bg-base-100 rounded-box w-52 flex flex-col text-end">
+                                            <li><p className="text-lg font-semibold">{user.displayName}</p></li>
+                                            <li><p className="text-md font-semibold">{user.email}</p></li>
+                                        </ul>
                                     </div>
-                                </label>
-                                <ul tabIndex={0} className="mt-3 z-[1] p-3 shadow  menu-sm dropdown-content bg-base-100 rounded-box w-52 flex flex-col text-end">
-                                    <li><p className="text-lg font-semibold">{user.displayName}</p></li>
-                                    <li><p className="text-md font-semibold">{user.email}</p></li>
-                                    <li className="self-end"><Link onClick={handelLogOut} className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Logout</Link></li>
-                                </ul>
-                            </div>
-                            :<Link to={'/login'}><button className="ml-10 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Login</button></Link>
+                                </div>
+
+                                : <Link to={'/login'}><button className="ml-10 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Login</button></Link>
                         }
-                        
+
                     </div>
                 </div>
                 <div className="drawer-side">

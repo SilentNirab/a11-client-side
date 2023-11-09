@@ -29,7 +29,7 @@ const Login = () => {
     const handelGoogleSingnIn = () =>{
         googleSignIn()
         .then(result => {
-            toast.success('Successfully login');
+            toast.success('Longin Successfully');
             console.log(result.user);
             navigate(location?.state ? location.state : '/');
         })
