@@ -5,9 +5,7 @@ import swal from "sweetalert";
 import roomBanner from '../../assets/Images/rooms-banner.jpg'
 
 const UpdateBooking = () => {
-    const roomDetails = useLoaderData();
-    console.log(roomDetails);
-  
+    const roomDetails = useLoaderData();  
     const {_id, room_name, adlts,childrens,arival,Departure, thumbnail_img, room_description } = roomDetails;
     const {user} = useContext(authContext);
     const handelUpdate = e =>{
