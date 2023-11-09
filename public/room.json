@@ -1,35 +1,91 @@
-[
-    {
-      "category_name": "Luxury Room",
-      "image": "https://i.ibb.co/VTVJdZ1/our-1.jpg",
-      "price": 320
-    },
-    {
-      "category_name": "Double Room",
-      "image": "https://i.ibb.co/pjKTBY2/our-2.jpg",
-      "price": 280
-    },
-    {
-      "category_name": "Family Room",
-      "image": "https://i.ibb.co/f09TcQW/our-3.jpg",
-      "price": 300
-    },
-    {
-      "category_name": "Delux Room",
-      "image": "https://i.ibb.co/DfF00Gw/our-4.jpg",
-      "price": 250
-    },
-    {
-      "category_name": "Single Room",
-      "image": "https://i.ibb.co/ByjBw9G/our-5.jpg",
-      "price": 180
-    },
-    {
-        "category_name": "Presidential Room",
-        "image": "https://i.ibb.co/2gn3V82/our-6.jpg",
-        "price": 280
-      }
-  ]
-  
-
-
+[{
+    "category_name": "Luxury Room",
+    "thumbnail_img": "https://i.ibb.co/VTVJdZ1/our-1.jpg",
+    "price": 320,
+    "room_description": "Experience luxury in our spacious and elegantly designed Luxury Room. Perfect for a relaxing stay with premium amenities.",
+    "room_size": "500 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/VTVJdZ1/our-1.jpg",
+      "https://i.ibb.co/VTVJdZ1/our-1.jpg"
+    ],
+    "special_offers": "Book 5 nights and get a complimentary spa treatment.",
+    "room_full_description": "The Luxury Room offers a truly opulent and indulgent experience for guests seeking the epitome of comfort and style. With a spacious layout spanning 500 square feet, this room is meticulously designed to provide an atmosphere of sheer luxury. The elegant decor, coupled with modern amenities, creates a haven of relaxation and sophistication.\n\nThe room features a plush king-size bed with premium bedding for a restful night's sleep. The en-suite bathroom is adorned with marble finishes, a deep soaking tub, and a separate rainfall shower. Guests can enjoy breathtaking views of the surroundings from the large windows, adding to the overall ambiance of tranquility.\n\nFor your convenience, the room is equipped with a work desk, high-speed Wi-Fi, and a smart TV for entertainment. The thoughtful design and attention to detail ensure that every aspect of your stay is comfortable and enjoyable.\n\nWhether you are traveling for business or leisure, the Luxury Room provides an unparalleled experience. Indulge in the lavish surroundings, take advantage of exclusive amenities, and create lasting memories in this sumptuous retreat.",
+    "rating": 4.8
+  },
+  {
+    "category_name": "Double Room",
+    "thumbnail_img": "https://i.ibb.co/pjKTBY2/our-2.jpg",
+    "price": 280,
+    "room_description": "Our Double Room is perfect for couples seeking a comfortable and intimate space. Enjoy modern amenities and a cozy atmosphere.",
+    "room_size": "350 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/pjKTBY2/our-2.jpg",
+      "https://i.ibb.co/pjKTBY2/our-2.jpg"
+    ],
+    "special_offers": "10% off for early bookings.",
+    "room_full_description": "The Double Room is designed for couples seeking a cozy and intimate space. With a size of 350 square feet, this room offers a comfortable retreat for a romantic getaway or a simple escape from the hustle and bustle of everyday life.\n\nThe room is furnished with a comfortable queen-size bed, ensuring a restful night's sleep. The decor is tastefully curated to create a warm and inviting atmosphere, providing the perfect backdrop for relaxation.\n\nModern amenities, including a flat-screen TV, Wi-Fi access, and a well-appointed bathroom, enhance the overall guest experience. The thoughtful design and attention to detail make this room a delightful choice for couples looking to enjoy quality time together.\n\nWhether you're celebrating a special occasion or simply looking for a peaceful retreat, the Double Room provides the ideal setting for a memorable and enjoyable stay.",
+    "rating": 4.5
+  },
+  {
+    "category_name": "Family Room",
+    "thumbnail_img": "https://i.ibb.co/f09TcQW/our-3.jpg",
+    "price": 300,
+    "room_description": "Enjoy a family getaway in our spacious Family Room. It features multiple beds and amenities suitable for all ages.",
+    "room_size": "450 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/f09TcQW/our-3.jpg",
+      "https://i.ibb.co/f09TcQW/our-3.jpg"
+    ],
+    "special_offers": "Children under 12 stay free.",
+    "room_full_description": "The Family Room is designed to accommodate the needs of families or groups traveling together. With a generous size of 450 square feet, this room provides ample space for relaxation and shared moments.\n\nFeaturing multiple beds, including a king-size or queen-size bed and additional single beds, the room ensures a comfortable stay for all family members. The decor is family-friendly, creating a welcoming and inviting atmosphere for guests of all ages.\n\nModern amenities such as a flat-screen TV, Wi-Fi access, and a well-equipped bathroom contribute to a convenient and enjoyable stay. The large windows offer natural light and scenic views, adding to the overall charm of the room.\n\nFor families traveling with children, special offers such as 'Children under 12 stay free' make the Family Room an attractive choice for a memorable family getaway.",
+    "rating": 4.7
+  },
+  {
+    "category_name": "Deluxe Room",
+    "thumbnail_img": "https://i.ibb.co/DfF00Gw/our-4.jpg",
+    "price": 250,
+    "room_description": "Indulge in comfort with our Deluxe Room. Well-appointed and spacious, it offers a delightful experience for your stay.",
+    "room_size": "400 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/DfF00Gw/our-4.jpg",
+      "https://i.ibb.co/DfF00Gw/our-4.jpg"
+    ],
+    "special_offers": "Complimentary breakfast for two.",
+    "room_full_description": "The Deluxe Room is a haven of comfort and indulgence, providing guests with a well-appointed space for a delightful stay. With a generous size of 400 square feet, this room is designed to offer both luxury and practicality.\n\nThe room features a comfortable king-size bed with premium atmosphere for guests of all ages.\n\nModern amenities such as a flat-screen TV, Wi-Fi access, and a well-equipped bathroom contribute to a convenient and enjoyable stay. The large windows offer natural light and scenic views, adding to the overall charm of the room.\n\nFor families traveling with children, special offers such as 'Children under 12 stay free' make the Family Room an attractive choice for a memorable family getaway.",
+    "rating": 4.7
+  },
+  {
+    "category_name": "Single Room",
+    "thumbnail_img": "https://i.ibb.co/ByjBw9G/our-5.jpg",
+    "price": 180,
+    "room_description": "Our Single Room is designed for solo travelers seeking comfort and convenience. Enjoy a restful stay with all the essentials.",
+    "room_size": "250 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/ByjBw9G/our-5.jpg",
+      "https://i.ibb.co/ByjBw9G/our-5.jpg"
+    ],
+    "special_offers": null,
+    "room_full_description": "The Family Room is designed to accommodate the needs of families or groups traveling together. With a generous size of 450 square feet, this room provides ample space for relaxation and shared moments.\n\nFeaturing multiple beds, including a king-size or queen-size bed and additional single beds, the room ensures a comfortable stay for all family members. The decor is family-friendly, creating a welcoming and inviting atmosphere for guests of all ages.\n\nModern amenities such as a flat-screen TV, Wi-Fi access, and a well-equipped bathroom contribute to a convenient and enjoyable stay. The large windows offer natural light and scenic views, adding to the overall charm of the room.\n\nFor families traveling with children, special offers such as 'Children under 12 stay free' make the Family Room an attractive choice for a memorable family getaway.",
+    "rating": 4.7
+  },
+  {
+    "category_name": "Presidential Room",
+    "thumbnail_img": "https://i.ibb.co/2gn3V82/our-6.jpg",
+    "price": 280,
+    "room_description": "Experience the height of luxury in our Presidential Room. It offers a spacious living area, stunning views, and exclusive amenities.",
+    "room_size": "600 sq. ft",
+    "availability": "Available",
+    "room_images": [
+      "https://i.ibb.co/2gn3V82/our-6.jpg",
+      "https://i.ibb.co/2gn3V82/our-6.jpg"
+    ],
+    "special_offers": "Complimentary airport transfer and spa package.",
+    "room_full_description": "Presidential Room is a haven of comfort and indulgence, providing guests with a well-appointed space for a delightful stay. With a generous size of 400 square feet, this room is designed to offer both luxury and practicality.\n\nThe room features a comfortable king-size bed with premium atmosphere for guests of all ages.\n\nModern amenities such as a flat-screen TV, Wi-Fi access, and a well-equipped bathroom contribute to a convenient and enjoyable stay. The large windows offer natural light and scenic views, adding to the overall charm of the room.\n\nFor families traveling with children, special offers such as 'Children under 12 stay free' make the Family Room an attractive choice for a memorable family getaway.",
+    "rating": 4.7
+  }
+]

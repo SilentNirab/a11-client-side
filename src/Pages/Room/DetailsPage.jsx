@@ -1,14 +1,15 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
 import roomBanner from '../../assets/Images/rooms-banner.jpg'
 import { useContext } from "react";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
 import 'react-toastify/dist/ReactToastify.css';
 import swal from "sweetalert";
+import { Rating } from "@smastrom/react-rating";
 const DetailsPage = () => {
     const roomDetails = useLoaderData();
-    const { category_name, thumbnail_img, room_description } = roomDetails;
-    const {user} = useContext(authContext);
-    const handelbook = e =>{
+    const { category_name, thumbnail_img,rating, room_full_description,price_per_night } = roomDetails;
+    const { user } = useContext(authContext);
+    const handelbook = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const room_name = form.get("room_name");
@@ -17,25 +18,27 @@ const DetailsPage = () => {
         const arival = form.get("arival");
         const Departure = form.get("Departure");
         const email = user?.email;
-        const booking = {room_name, adults,childrens, arival, Departure,
-        thumbnail_img, email}
+        const booking = {
+            room_name, adults, childrens, arival, Departure,
+            thumbnail_img, email
+        }
 
         fetch('http://localhost:5000/booking', {
-            method: 'POST', 
+            method: 'POST',
             headers: {
                 'content-type': 'application/json'
-            }, 
+            },
             body: JSON.stringify(booking)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                swal( "Book successfully",{
-                    icon: "success",
-                  });
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    swal("Book successfully", {
+                        icon: "success",
+                    });
+                }
+            })
 
     }
     return (
@@ -84,20 +87,21 @@ const DetailsPage = () => {
                             </label>
                             <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" name="Departure" required />
                         </div>
-                            <input className="w-32 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md" type="submit" value="Book Now" />
+                        <input className="w-32 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md" type="submit" value="Book Now" />
                     </form>
                 </div>
             </div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img className='w-full' src={thumbnail_img} alt="Album" /></figure>
                 <div className="card-body w-2/3">
-                    <h2 className="card-title">{category_name}</h2>
-                    <p>{room_description}</p>
-                    <div className="card-actions justify-end">
-                        <Link to={``}>
-                            <button className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Confirm</button>
-                        </Link>
-                    </div>
+                    <h2 className="text-2xl font-bold">{category_name}</h2>
+                    <h2 className="card-title">$-{price_per_night} Price Per Night</h2>
+                    <Rating
+                        style={{ maxWidth: 120 }}
+                        value={rating}
+                        readOnly
+                    />
+                    <p>{room_full_description}</p>
                 </div>
             </div>
         </div>
