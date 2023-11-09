@@ -8,8 +8,8 @@ const RoomCard = ({ room }) => {
         <div className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img className='w-full' src={thumbnail_img} alt="Album" /></figure>
             <div className="card-body w-2/3">
-                <h2 className="card-title">{category_name}</h2>
-                <h2 className="card-title">{price_per_night}</h2>
+                <h2 className="text-2xl font-bold">{category_name}</h2>
+                <h2 className="card-title">${price_per_night} Price Per Night</h2>
                 <p>{room_description}</p>
                 <div className="card-actions justify-end">
                     <Link to={`details/${_id}`}>
