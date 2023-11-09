@@ -26,7 +26,7 @@ const Room = () => {
                 </select>
             </div>
 
-            <div className="max-w-7xl mx-auto space-y-4 py-5">
+            <div className="max-w-7xl mx-auto space-y-4 py-5 px-4 md:px-0">
                 {
                     rooms.map(room => <RoomCard key={room._id} room={room}></RoomCard>)
                 }
