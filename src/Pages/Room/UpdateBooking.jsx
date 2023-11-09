@@ -1,14 +1,16 @@
-import { Link, useLoaderData } from "react-router-dom";
-import roomBanner from '../../assets/Images/rooms-banner.jpg'
-import { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import { authContext } from "../../Provider/AuthProvider/AuthProvider";
-import 'react-toastify/dist/ReactToastify.css';
+import { useContext } from "react";
 import swal from "sweetalert";
-const DetailsPage = () => {
+import roomBanner from '../../assets/Images/rooms-banner.jpg'
+
+const UpdateBooking = () => {
     const roomDetails = useLoaderData();
-    const { category_name, thumbnail_img, room_description } = roomDetails;
+    console.log(roomDetails);
+  
+    const {_id, room_name, adlts,childrens,arival,Departure, thumbnail_img, room_description } = roomDetails;
     const {user} = useContext(authContext);
-    const handelbook = e =>{
+    const handelUpdate = e =>{
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const room_name = form.get("room_name");
@@ -19,9 +21,9 @@ const DetailsPage = () => {
         const email = user?.email;
         const booking = {room_name, adults,childrens, arival, Departure,
         thumbnail_img, email}
-
-        fetch('http://localhost:5000/booking', {
-            method: 'POST', 
+        
+        fetch(`http://localhost:5000/booking/${_id}`, {
+            method: 'Put', 
             headers: {
                 'content-type': 'application/json'
             }, 
@@ -30,14 +32,13 @@ const DetailsPage = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if(data.insertedId){
+            if(data.acknowledged){
                 swal( "Book successfully",{
                     icon: "success",
                   });
             }
         })
-
-    }
+    }    
     return (
         <div className="">
             <div className="">
@@ -48,8 +49,8 @@ const DetailsPage = () => {
                     <h3 className="text-white">CHECK AVAILABILITY</h3>
                 </div>
                 <div className="max-w-7xl mx-auto ">
-                    <form onSubmit={handelbook} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                        <select className="select select-bordered md:w-40" name="room_name" defaultValue={category_name} required>
+                    <form onSubmit={handelUpdate} className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        <select className="select select-bordered md:w-40" name="room_name" defaultValue={room_name} required>
                             <option>Luxury Room</option>
                             <option>Double Room</option>
                             <option>Family Room</option>
@@ -57,15 +58,15 @@ const DetailsPage = () => {
                             <option>Single Room</option>
                             <option>Presidential Room</option>
                         </select>
-                        <select className="select select-bordered md:w-40" name="adults" required>
-                            <option disabled selected>No of adults</option>
+
+                        <select className="select select-bordered md:w-40" name="adults" defaultValue={adlts} required>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
                         </select>
-                        <select className="select select-bordered md:w-40" name="childrens" required>
-                            <option disabled selected>No of childrens</option>
+                        <select className="select select-bordered md:w-40" defaultValue={childrens} name="childrens"  >
+                            <option>0</option>
                             <option>1</option>
                             <option>2</option>
                             <option>3</option>
@@ -76,33 +77,27 @@ const DetailsPage = () => {
                             <label className="block text-white text-sm font-bold mb-2" name="" htmlFor="date">
                                 Arrival Date
                             </label>
-                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" name="arival" required />
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" defaultValue={arival} name="arival" required />
                         </div>
                         <div className="-mt-5 md:w-40">
                             <label className="block text-white text-sm font-bold mb-2" htmlFor="date">
                                 Departure Date
                             </label>
-                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" name="Departure" required />
+                            <input className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="date" type="date" defaultValue={Departure} name="Departure" required />
                         </div>
-                            <input className="w-32 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md" type="submit" value="Book Now" />
+                        <input className="w-32 text-white font-medium bg-[#a28441] px-4 py-2 rounded-md" type="submit" value="Update" />
                     </form>
                 </div>
             </div>
             <div className="card lg:card-side bg-base-100 shadow-xl">
                 <figure><img className='w-full' src={thumbnail_img} alt="Album" /></figure>
                 <div className="card-body w-2/3">
-                    <h2 className="card-title">{category_name}</h2>
+                    <h2 className="card-title">{room_name}</h2>
                     <p>{room_description}</p>
-                    <div className="card-actions justify-end">
-                        <Link to={``}>
-                            <button className="text-white font-medium bg-[#a28441] px-4 py-2 rounded-md">Confirm</button>
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>
-
-    )
+    );
 };
 
-export default DetailsPage;
+export default UpdateBooking;

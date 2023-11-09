@@ -2,13 +2,14 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 const RoomCard = ({ room }) => {
-    const {_id, category_name, thumbnail_img, room_description } = room;
+    const {_id, category_name, price_per_night, thumbnail_img, room_description } = room;
 
     return (
         <div className="card lg:card-side bg-base-100 shadow-xl">
             <figure><img className='w-full' src={thumbnail_img} alt="Album" /></figure>
             <div className="card-body w-2/3">
                 <h2 className="card-title">{category_name}</h2>
+                <h2 className="card-title">{price_per_night}</h2>
                 <p>{room_description}</p>
                 <div className="card-actions justify-end">
                     <Link to={`details/${_id}`}>
@@ -21,7 +22,7 @@ const RoomCard = ({ room }) => {
 };
 
 RoomCard.propTypes = {
-    room: PropTypes.node
+    room: PropTypes.object
 };
 
 export default RoomCard;

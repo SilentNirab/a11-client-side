@@ -1,9 +1,9 @@
 const Offer = () => {
     return (
-        <div>
+        <div className="">
             <div className="bg-cover bg-center" style={{ backgroundImage: 'url(https://rn53themes.net/themes/demo/the-royal-hotel/images/offer-bg.jpg)' }}>
                 <div className=" w-full h-full bg-gradient-to-r from-[#f4364fa1] to-[#f2a5af0d] bg-black bg-opacity-40 py-20">
-                    <div className="md:flex justify-around items-center max-w-7xl mx-auto">
+                    <div className="flex flex-col-reverse md:flex-row md:justify-around items-center max-w-7xl mx-auto">
                         <div className="w-96 text-center">
                             <h1 className="mb-5 text-4xl text-white font-bold mt-5">STANDARDIZED BUDGET ROOMS</h1>
                             <hr />

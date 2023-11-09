@@ -26,13 +26,13 @@ const Home = () => {
                 </div>
             </div>
             <div className="bg-gray-200 py-20">
-                <div className="text-center text-black space-y-5">
+                <div className="text-center text-black space-y-5 mx-4 md:mx-0">
                     <h2 className="text-6xl">Our Rooms</h2>
                     <hr className="w-36 mx-auto border-b border-[#a28441]" />
                     <p className="text-lg text-gray-400 max-w-lg mx-auto">When you host a party or family reunion, the special celebrations let you streng then bonds with</p>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
                         {
-                            rooms.map(room => <div key={room._id} className="card w-96 bg-base-100 shadow-xl">
+                            rooms.map(room => <div key={room._id} className="card md:w-96 bg-base-100 shadow-xl">
                                 <figure><img className="w-full" src={room.thumbnail_img} alt="Shoes" /></figure>
                                 <div className="card-body hover:text-[#a28441]">
                                     <h2 className="card-title ">{room.category_name}</h2>
