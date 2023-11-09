@@ -23,7 +23,7 @@ const DetailsPage = () => {
             thumbnail_img, email
         }
 
-        fetch('http://localhost:5000/booking', {
+        fetch('https://room-booking-server-eta.vercel.app/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const MyRoom = () => {
     const { user } = useContext(authContext);
     const [bookings, setBookings] = useState([])
-    const url = `http://localhost:5000/booking?email=${user?.email}`;
+    const url = `https://room-booking-server-eta.vercel.app/booking?email=${user?.email}`;
     useEffect(() => {
         fetch(url,{
             credentials: 'include'
@@ -17,7 +17,7 @@ const MyRoom = () => {
 
     const handelDelete = (id) => {
 
-        fetch(`http://localhost:5000/booking/${id}`, {
+        fetch(`https://room-booking-server-eta.vercel.app/booking/${id}`, {
             method: 'DELETE',
         })
             .then(res => res.json())

@@ -6,7 +6,7 @@ const Room = () => {
     const [price, setPrice] = useState('');
     console.log(price);
     useEffect(() => {
-        fetch(`http://localhost:5000/rooms?sortField=price_per_night&sortOrder=${price}`)
+        fetch(`https://room-booking-server-eta.vercel.app/rooms?sortField=price_per_night&sortOrder=${price}`)
             .then(res => res.json())
             .then(data => setRooms(data))
     }, [price])

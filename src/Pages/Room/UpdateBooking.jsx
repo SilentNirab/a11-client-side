@@ -22,7 +22,7 @@ const UpdateBooking = () => {
         const booking = {room_name, adults,childrens, arival, Departure,
         thumbnail_img, email}
         
-        fetch(`http://localhost:5000/booking/${_id}`, {
+        fetch(`https://room-booking-server-eta.vercel.app/booking/${_id}`, {
             method: 'Put', 
             headers: {
                 'content-type': 'application/json'

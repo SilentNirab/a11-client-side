@@ -39,12 +39,12 @@ const router = createBrowserRouter([
             {
                 path: 'rooms/details/:id',
                 element: <DetailsPage></DetailsPage>,
-                loader: ({params}) => fetch(`http://localhost:5000/rooms/${params.id}`)
+                loader: ({params}) => fetch(`https://room-booking-server-eta.vercel.app/rooms/${params.id}`)
             },
             {
                 path: 'myroom/:id',
                 element: <UpdateBooking></UpdateBooking>,
-                loader: ({params}) => fetch(`http://localhost:5000/booking/${params.id}`)
+                loader: ({params}) => fetch(`https://room-booking-server-eta.vercel.app/booking/${params.id}`)
             }
         ]
     }
